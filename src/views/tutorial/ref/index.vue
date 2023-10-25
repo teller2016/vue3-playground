@@ -4,6 +4,7 @@
 
     <div>{{name}}</div>
     <div>{{counter.count}}</div>
+    <div>{{counter2}}</div>
 
     <div><button @click="onClick">변환</button></div>
   </div>
@@ -18,9 +19,12 @@ const counter = reactive({
   count: 0,
 });
 
+const counter2 = ref(1);
+
 const onClick = () => {
   counter.count += 1;
   name.value = "molly" + counter.count;
+  counter2.value += 1;
 };
 </script>
 

@@ -7,6 +7,8 @@ import render from "@/views/tutorial/render/index.vue";
 import lifeCycle from "@/views/tutorial/lifeCycle/index.vue";
 import watch from "@/views/tutorial/watch/index.vue";
 import component from "@/views/tutorial/component/index.vue";
+import computed from "@/views/tutorial/computed/index.vue";
+import classBinding from "@/views/tutorial/classBinding/index.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -50,6 +52,16 @@ const router = createRouter({
       path: "/component",
       name: "component",
       component: component,
+    },
+    {
+      path: "/computed",
+      name: "computed",
+      component: computed,
+    },
+    {
+      path: "/classBinding",
+      name: "classBinding",
+      component: classBinding,
     },
   ],
 });
