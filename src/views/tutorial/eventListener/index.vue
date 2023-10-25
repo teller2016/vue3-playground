@@ -4,6 +4,8 @@
 
     <button v-on:click="increament">v-on:click {{count}}</button>
     <button @:click="increament">@:click {{count}}</button>
+
+    <input @keyup.enter="onEnter">
   </div>
 </template>
   
@@ -15,6 +17,11 @@ const count = ref(0);
 function increament() {
   count.value += 1;
 }
+
+const onEnter = (e) => {
+  console.log(e);
+
+};
 </script>
   
   <style>
