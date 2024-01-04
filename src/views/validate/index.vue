@@ -2,21 +2,24 @@
     <div>
         <h1>vee-validate</h1>
 
-        <input v-model="email" v-bind="emailAttrs" type="text">
-        <div>
+        <customInput v-model="email" v-bind="emailProps"></customInput>
+        <div>{{ errors.email }}</div>
+        <p>
             values:{{ values }}
-            errors: {{ errors }}
-        </div>
+        </p>
     </div>
 </template>
     
 <script setup>
 import validateComposable from '@/composables/validate/index.js';
+import customInput from '@/components/CustomInput.vue';
 
 const {  
     values,
     email,
-    emailAttrs, errors } = validateComposable();
+    emailProps,
+    errors 
+    } = validateComposable();
 </script>
 
 <style>

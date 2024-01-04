@@ -10,12 +10,22 @@ export default function validateComposable() {
     validationSchema: schema,
   });
 
-  const [email, emailAttrs] = defineField("email");
+  //   const [email, emailProps] = defineField("email", {
+  //     validateOnModelUpdate: false,
+  //     props: (state) => ({
+  //       error: state.errors[0],
+  //     }),
+  //   });
+  const [email, emailProps] = defineField("email", (state) => {
+    return {
+      validateOnModelUpdate: state.errors.length > 0,
+    };
+  });
 
   return {
     values,
     email,
-    emailAttrs,
+    emailProps,
     errors,
   };
 }
