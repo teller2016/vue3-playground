@@ -11,6 +11,7 @@ import computed from "@/views/tutorial/computed/index.vue";
 import classBinding from "@/views/tutorial/classBinding/index.vue";
 import form from "@/views/tutorial/form/index.vue";
 import validate from "@/views/validate/index.vue";
+import provideAndInject from "@/views/tutorial/provideAndInject";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -69,6 +70,11 @@ const router = createRouter({
       path: "/form",
       name: "form",
       component: form,
+    },
+    {
+      path: "/provideAndInject",
+      name: "provideAndInject",
+      component: provideAndInject,
     },
     {
       path: "/validate",
