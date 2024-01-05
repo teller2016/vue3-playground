@@ -6,7 +6,7 @@ const schema = yup.object({
 });
 
 export default function validateComposable() {
-  const { values, errors, defineField } = useForm({
+  const { values, errors, defineField, meta } = useForm({
     validationSchema: schema,
   });
 
@@ -27,5 +27,6 @@ export default function validateComposable() {
     email,
     emailProps,
     errors,
+    meta,
   };
 }
